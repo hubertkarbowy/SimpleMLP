@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.Arrays;
 
 public class Utils {
@@ -32,6 +33,18 @@ public class Utils {
             }
         }
         return pixels;
+    }
+
+    static int getGoldFromPathName(Path path, boolean isBinary) {
+        if (isBinary) {
+            if (path.getParent().endsWith("pos")) return 1;
+            else if (path.getParent().endsWith("neg")) return 0;
+            else throw new RuntimeException("Only `pos` or `neg` directory names are allowed.");
+        }
+        else {
+            int classNum = Integer.parseInt(path.getParent().getFileName().toString());
+            return classNum;
+        }
     }
 
     // If addOne is set to 1, this function returns the product of W and x and adds a 1.0f in the zeroeth index

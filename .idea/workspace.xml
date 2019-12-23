@@ -2,27 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="682aba9f-713a-42c9-be4a-5bc6de5ba689" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/project-template.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SimpleMLP.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/other/mnist_sample.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/other/obliczenia.ods" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/main/pl/hubertkarbowy/train1/one_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/test/pl/hubertkarbowy/train1/one_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/ActivationFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/LossFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/MLPNetwork.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/pl/hubertkarbowy/NumLayersTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/SerializedModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/other/mnist_sample.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/other/obliczenia.ods" beforeDir="false" afterPath="$PROJECT_DIR$/other/obliczenia.ods" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/other/train1/one_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/test/pl/hubertkarbowy/train1/one_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/hubertkarbowy/MLPNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/MLPNetwork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/hubertkarbowy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/hubertkarbowy/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/pl/hubertkarbowy/MLPNetworkTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/pl/hubertkarbowy/MLPNetworkTests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -69,7 +58,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MLPNetworkTests">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -108,6 +97,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MLPNetworkTests.binaryCrossEntropyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SimpleMLP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.hubertkarbowy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.hubertkarbowy" />
+      <option name="MAIN_CLASS_NAME" value="pl.hubertkarbowy.MLPNetworkTests" />
+      <option name="METHOD_NAME" value="binaryCrossEntropyTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -135,8 +141,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MLPNetworkTests" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.MLPNetworkTests.binaryCrossEntropyTest" />
+        <item itemvalue="JUnit.MLPNetworkTests" />
       </list>
     </recent_temporary>
   </component>
@@ -153,6 +160,9 @@
       <workItem from="1576847800170" duration="8459000" />
       <workItem from="1576963247115" duration="22221000" />
       <workItem from="1577052382669" duration="89000" />
+      <workItem from="1577095926828" duration="9752000" />
+      <workItem from="1577105735680" duration="6000" />
+      <workItem from="1577108923795" duration="3390000" />
     </task>
     <servers />
   </component>

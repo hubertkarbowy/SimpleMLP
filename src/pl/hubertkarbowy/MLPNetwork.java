@@ -1,18 +1,28 @@
 package pl.hubertkarbowy;
 
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.lang.Math;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.*;
+import java.util.stream.Collectors;
+
 import static pl.hubertkarbowy.Utils.*;
 
 public class MLPNetwork {
     private int inputSize;
-    private int numClasses;
     private int[] neurons; // number of neurons in each layer
     private float[][][] weights;
     private float[][] inputs;
-    private byte[] gold;
+    private int[] gold;
+    private boolean isBinary = true;  // for binary classification we use `pos` / `neg` dir names,
+                                      // for multi-class we use `0`, `1`, `2` etc.
+    private boolean isTest = false;
+    private float maxDelta = 0.03f;   // by how much at most will we increase/decrease each weight
+    private float percChange = 0.05f; // what percentage of weights to randomly change on each RHC iteration
+    private int maxPatience = 30;     // number of RHC iterations after which to stop if no improvement was made
+    private int maxIter = 10500;       // total maximum number of RHC iterations
 
     private float randomFloat() {
         float f = (float)Math.random();
@@ -22,7 +32,6 @@ public class MLPNetwork {
 
     public MLPNetwork(int[] layersDefinition) {
         this.inputSize = layersDefinition[0] + 1; // input layer plus 1.0f in the zeroeth index as a dummy bias variable x0
-        this.numClasses = layersDefinition[layersDefinition.length-1]; // output layer
         this.neurons = layersDefinition;
         this.weights = new float[neurons.length-1][][]; // L - 1 weight matrices
 
@@ -44,15 +53,34 @@ public class MLPNetwork {
     }
 
     public void setInputs(File dirPathAsFile) throws IOException { // todo: positive and negative examples
-        File[] imgList = dirPathAsFile.listFiles();
-        int numExamples = imgList.length;
+        File[] trainsetPath = dirPathAsFile.listFiles();
+        List<String> dirNames = Arrays.asList(trainsetPath).stream().map(x -> x.getName()).collect(Collectors.toList());
+        try {
+            if (dirNames.contains("pos") && dirNames.contains("neg")) {
+                isBinary = true;
+            }
+            else if (dirNames.stream().map(elem -> Integer.parseInt(elem)).collect(Collectors.toList()).size() > 0) {
+                isBinary = false;
+            }
+            else {
+                throw new RuntimeException();
+            }
+        }
+        catch (Exception e) {
+            throw new RuntimeException("Please put your examples either in `pos` and `neg` directories, or in directories " +
+                                       " whose names are integers representing the class number.");
+        }
+        List<Path> imgList = Files.walk(dirPathAsFile.toPath()).filter(Files::isRegularFile).collect(Collectors.toList());
+        Collections.shuffle(imgList);
+        int numExamples = imgList.size();
         this.inputs = new float[numExamples][];
-        this.gold = new byte[numExamples];
+        this.gold = new int[numExamples];
         int fCounter = 0;
-        for (File f : imgList) {
-            System.out.println("Name: " + f.getAbsolutePath());
-            BufferedImage rescaled = loadAndRescale(f, (int)Math.sqrt(inputSize)); // assume square images
+        for (Path f : imgList) {
+            System.out.println("Name: " + f.toString());
+            BufferedImage rescaled = loadAndRescale(f.toFile(), (int)Math.sqrt(inputSize)); // assume square images
             this.inputs[fCounter] = imgToInputs(rescaled);
+            this.gold[fCounter] = (isTest ? -1000 : getGoldFromPathName(f, isBinary));
             fCounter++;
         }
     }
@@ -61,11 +89,13 @@ public class MLPNetwork {
 
     public void setWeights(float[][][] weights) { this.weights = weights; }
 
-    public float[] forwardSingle(float[] singleInput) { // default problem: single label binary classification.
+    public void setGold(int[] gold) { this.gold = gold; }
+
+    protected float[] forwardSingle(float[] singleInput) { // default problem: single label binary classification.
         return forwardSingle(singleInput, ActivationFunction.SIGMOID, ActivationFunction.SIGMOID);
     }
 
-    public float[] forwardSingle(float[] singleInput, ActivationFunction hiddenActivation, ActivationFunction outputActivation) {
+    protected float[] forwardSingle(float[] singleInput, ActivationFunction hiddenActivation, ActivationFunction outputActivation) {
         float[] a = singleInput;
         for (int L=0; L<weights.length; L++) {
             float[][] W = weights[L];
@@ -75,14 +105,119 @@ public class MLPNetwork {
             else { // for all other layers
                 a = matMul(W, a, 1, hiddenActivation);
             }
-//            int addOne = (L == weights.length-1 ? 0 : 1);
-//            a = matMul(W, a, addOne, ActivationFunction.SIGMOID);
         }
         return a;
     }
 
-    public float binaryCrossEntropyLoss() { // todo: implement
-        return 0.0f;
+    protected float binaryCrossEntropyLoss() {
+        float crossEntropy = 0.0f;
+        for (int n=0; n<inputs.length; n++) {
+            float[] outputs = forwardSingle(inputs[n], ActivationFunction.SIGMOID, ActivationFunction.SIGMOID);
+            float y = gold[n];
+            float y_pred = outputs[0];
+            crossEntropy += (y*Math.log(y_pred)) + ((1 - y)*Math.log(1 - y_pred));
+        }
+        return -crossEntropy / inputs.length;
+    }
+
+    // Trains the model and updates weights array in this class
+    public void train() {
+        Map<Integer, int[]> floatAddresses = new HashMap<>();
+
+        int weightCounter = 0;
+        for (int i=0; i<weights.length; i++) {
+            for (int j=0; j<weights[i].length; j++) {
+                for (int k=0; k<weights[i][j].length; k++) {
+                    floatAddresses.put(weightCounter, new int[]{i, j, k});
+                    weightCounter++;
+                }
+            }
+        }
+        System.out.println("This model has " + weightCounter + " parameters.");
+
+        Random r = new Random();
+        float bestLoss = binaryCrossEntropyLoss();
+        int patience = 0;
+        System.out.println("Starting with loss of " + bestLoss);
+        for (int cnt=0; ; cnt++) {
+            int[] randomWeightIndices = r.ints((int) (percChange * weightCounter), 0, weightCounter).toArray();
+            float[] originalWeights = getWeightValues(floatAddresses, randomWeightIndices);
+            float[] modifiedWeights = modifyFloats(originalWeights, r);
+            changeWeights(floatAddresses, randomWeightIndices, modifiedWeights);
+            float modifLoss = binaryCrossEntropyLoss();
+            if (modifLoss < bestLoss) {
+                System.out.println("On iteration " + cnt + " loss fell to " + modifLoss);
+                bestLoss = modifLoss;
+                patience = 0;
+            }
+            else {
+                changeWeights(floatAddresses, randomWeightIndices, originalWeights); // restore original weights if the loss goes up
+                patience++;
+            }
+            if (patience > maxPatience || cnt > maxIter) break;
+        }
+    }
+
+    public boolean predictBinary(float[] single) {
+        float res[] = forwardSingle(single, ActivationFunction.SIGMOID, ActivationFunction.SIGMOID);
+        if (res[0] >= 0.5) return true;
+        else return false;
+    }
+
+    private float[] modifyFloats(float[] originalWeights, Random r) {
+        float[] modifiedWeights = new float[originalWeights.length];
+        for (int i=0; i<originalWeights.length; i++) {
+            int factor = r.nextInt(5);
+            if (factor == 0) factor = 1;
+            float delta;
+            if (Math.random() >= 0.5) {
+                 delta = (-maxDelta / factor) * originalWeights[i];
+            }
+            else {
+                delta = (maxDelta / factor) * originalWeights[i];
+            }
+            modifiedWeights[i] = originalWeights[i] + delta;
+        }
+        return modifiedWeights;
+    }
+
+    private float[] getWeightValues(Map<Integer, int[]> floatAddresses, int[] randomWeightIndices) {
+        float[] currWeights = new float[randomWeightIndices.length];
+        for (int n=0; n<randomWeightIndices.length; n++) {
+            int[] addresses = floatAddresses.get(randomWeightIndices[n]);
+            int i = addresses[0]; int j = addresses[1]; int k = addresses[2];
+            currWeights[n] = this.weights[i][j][k];
+        }
+        return currWeights;
+    }
+
+    // Saves newValues to the weights array in this class
+    private void changeWeights(Map<Integer, int[]> floatAddresses, int[] randomWeightIndices, float[] newValues) {
+        for (int n=0; n<randomWeightIndices.length; n++) {
+            int[] addresses = floatAddresses.get(randomWeightIndices[n]);
+            int i = addresses[0]; int j = addresses[1]; int k = addresses[2];
+            this.weights[i][j][k] = newValues[n];
+        }
+    }
+
+    public void saveModel(String destPath) throws IOException {
+        SerializedModel model = new SerializedModel(this.neurons, this.weights, this.maxDelta, this.percChange, this.maxPatience, this.maxIter);
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(destPath))) {
+            oos.writeObject(model);
+        }
+    }
+
+    public void restoreModel(String srcPath) throws IOException, ClassNotFoundException {
+        SerializedModel model = null;
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(srcPath))) {
+            model = (SerializedModel) ois.readObject();
+        }
+        this.neurons = model.neurons;
+        this.weights = model.weights;
+        this.maxDelta = model.maxDelta;
+        this.percChange = model.percChange;
+        this.maxPatience = model.maxPatience;
+        this.maxIter = model.maxIter;
     }
 
     public float[][] getInputs() { return this.inputs; }

@@ -77,4 +77,20 @@ public class MLPNetworkTests {
         float[] actualRet = net.forwardSingle(x);
         Assert.assertArrayEquals(expectedRet, actualRet, 0.001f);
     }
+
+    @Test
+    public void binaryCrossEntropyTest() {
+        float[][] inputs = new float[][] {{1.0f, 2.0f, 3.0f, 4.0f, 5.0f}, {1.0f, 0.05f, 0.04f, 0.03f, 0.02f}};
+        float[][][] allW = new float[][][] { W,  // 2 x 5
+                { {0.15f, 0.25f, 0.35f}, {0.35f, 0.25f, 0.15f} }, // 2 x 3
+                { {0.15f, 0.25f, 0.35f} } // 1 x 3
+        };
+        int[] gold = new int[]{0, 1};
+        net.setInputs(inputs);
+        net.setWeights(allW);
+        net.setGold(gold);
+        float expectedCost = 0.7294f;
+        float actualCost = net.binaryCrossEntropyLoss();
+        Assert.assertEquals(expectedCost, actualCost, 0.001f);
+    }
 }
