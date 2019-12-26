@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="682aba9f-713a-42c9-be4a-5bc6de5ba689" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/SerializedModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/main/uladzislauharbuz/open-file-folder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uladzislauharbuz/JTextAreaOutputStream.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uladzislauharbuz/MainGUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uladzislauharbuz/MainGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/other/mnist_sample.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/other/obliczenia.ods" beforeDir="false" afterPath="$PROJECT_DIR$/other/obliczenia.ods" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/other/train1/one_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/test/pl/hubertkarbowy/train1/one_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/hubertkarbowy/MLPNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/MLPNetwork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/hubertkarbowy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/hubertkarbowy/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/pl/hubertkarbowy/MLPNetworkTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/pl/hubertkarbowy/MLPNetworkTests.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,33 +27,28 @@
   </component>
   <component name="ProjectId" id="1VFTKU5nq1WS7coDaMCaSLHxa3a" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="393" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="956" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.MainGUI">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -71,6 +61,20 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="uladzislauharbuz.MainGUI" />
+      <module name="SimpleMLP" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uladzislauharbuz.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -141,11 +145,24 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainGUI" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.MLPNetworkTests.binaryCrossEntropyTest" />
         <item itemvalue="JUnit.MLPNetworkTests" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -181,5 +198,43 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="906" y="259" key="#Project_Structure" timestamp="1577359970213">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state x="906" y="259" key="#Project_Structure/0.80.3840.2080@0.80.3840.2080" timestamp="1577359970213" />
+    <state x="1438" y="397" key="#com.intellij.ide.util.MemberChooser" timestamp="1577373098452">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state x="1438" y="397" key="#com.intellij.ide.util.MemberChooser/0.80.3840.2080@0.80.3840.2080" timestamp="1577373098452" />
+    <state x="1250" y="584" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1577363367744">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state x="1250" y="584" key="#com.intellij.ide.util.TreeFileChooserDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1577363367744" />
+    <state width="3726" height="517" key="GridCell.Tab.0.bottom" timestamp="1577375897907">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state width="3726" height="517" key="GridCell.Tab.0.bottom/0.80.3840.2080@0.80.3840.2080" timestamp="1577375897907" />
+    <state width="3726" height="517" key="GridCell.Tab.0.center" timestamp="1577375897906">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state width="3726" height="517" key="GridCell.Tab.0.center/0.80.3840.2080@0.80.3840.2080" timestamp="1577375897906" />
+    <state width="3726" height="517" key="GridCell.Tab.0.left" timestamp="1577375897905">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state width="3726" height="517" key="GridCell.Tab.0.left/0.80.3840.2080@0.80.3840.2080" timestamp="1577375897905" />
+    <state width="3726" height="517" key="GridCell.Tab.0.right" timestamp="1577375897906">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state width="3726" height="517" key="GridCell.Tab.0.right/0.80.3840.2080@0.80.3840.2080" timestamp="1577375897906" />
+    <state x="1112" y="716" key="com.intellij.ide.util.TipDialog" timestamp="1577374398894">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state x="1112" y="716" key="com.intellij.ide.util.TipDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1577374398894" />
+    <state x="1290" y="828" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog" timestamp="1577362998102">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state x="1290" y="828" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1577362998102" />
   </component>
 </project>
