@@ -4,10 +4,11 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.text.NumberFormatter;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -25,9 +26,6 @@ public class MainGUI {
     private JButton openTrainSetButton;
     private JTextArea authorText;
     private JButton trainButton;
-    private JTextField trainSaveTextField;
-    private JButton trainSaveFilePathButton;
-    private JButton trainSaveButton;
     private JSpinner imageWidthSpinner;
     private JSpinner imageHeightSpinner;
     private JList layersList;
@@ -38,9 +36,12 @@ public class MainGUI {
     private JButton saveModelButton;
     private JButton openModelButton;
     private JLabel netStatusLabel;
-    private JLabel saveTrainStatusLabel;
     private JLabel trainStatusLabel;
     private JTextArea stdoutTextArea;
+    private JPanel drawingPanel;
+    private JTextField textField1;
+    private JButton clearButton;
+    private JDrawingArea drawingArea;
 
     private JFileChooser trainFileChooser = new JFileChooser();
     private File trainFile;
@@ -74,6 +75,11 @@ public class MainGUI {
         PrintStream stdoutStream = new PrintStream(new JTextAreaOutputStream(stdoutTextArea));
         System.setOut(stdoutStream);
         System.setErr(stdoutStream);
+
+        drawingArea = new JDrawingArea();
+        drawingArea.setSize(250,250);
+        drawingArea.setBackground(Color.WHITE);
+        drawingArea.setVisible(true);
 
         openTrainSetButton.addActionListener(new ActionListener() {
             @Override
@@ -126,27 +132,7 @@ public class MainGUI {
                 netStatusLabel.setText("OK");
             }
         });
-        trainSaveFilePathButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                trainFileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-                int ret = trainFileChooser.showSaveDialog(null);
-                if (ret == trainFileChooser.APPROVE_OPTION) {
-                    saveTrainFile = trainFileChooser.getSelectedFile();
-                    trainSaveTextField.setText(saveTrainFile.getPath());
-                }
-            }
-        });
-        trainSaveButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    net.saveModel(saveTrainFile.getPath());
-                } catch (IOException ex) {
-                    saveTrainStatusLabel.setText("Failed to save trained network:" + ex.getMessage());
-                }
-            }
-        });
+
         trainButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -164,6 +150,55 @@ public class MainGUI {
                 thread.start();
             }
         });
+        saveModelButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                trainFileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+                int ret = trainFileChooser.showSaveDialog(null);
+                if (ret == trainFileChooser.APPROVE_OPTION) {
+                    saveTrainFile = trainFileChooser.getSelectedFile();
+                }
+                try {
+                    net.saveModel(saveTrainFile.getPath());
+                } catch (IOException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        });
+        openModelButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                trainFileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+                int ret = trainFileChooser.showOpenDialog(null);
+                if (ret == trainFileChooser.APPROVE_OPTION) {
+                    try {
+                        net = new MLPNetwork(new int[0]);
+                        net.restoreModel(trainFileChooser.getSelectedFile().getPath());
+                    } catch (Exception ex) {
+                        System.out.println(ex.getMessage());
+                    }
+                }
+            }
+        });
+        drawingArea.addMouseMotionListener(new MouseMotionAdapter() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                super.mouseDragged(e);
+                drawingArea.setDraw(true);
+                drawingArea.setCursor(e.getPoint(), 5);
+                drawingArea.repaint();
+            }
+        });
+        drawingPanel.add(drawingArea);
+        drawingPanel.revalidate();
+        clearButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                drawingArea.setDraw(false);
+                drawingArea.clearPaint();
+                drawingArea.repaint();
+            }
+        });
     }
 
     public static void main(String args[]) {
@@ -173,5 +208,4 @@ public class MainGUI {
         mainFrame.pack();
         mainFrame.setVisible(true);
     }
-
 }
