@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="682aba9f-713a-42c9-be4a-5bc6de5ba689" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/res/main/uladzislauharbuz/open-file-folder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/uladzislauharbuz/JTextAreaOutputStream.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/uladzislauharbuz/MainGUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/uladzislauharbuz/MainGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/hubertkarbowy/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uladzislauharbuz/JDrawingArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uladzislauharbuz/JDrawingArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uladzislauharbuz/MainGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/uladzislauharbuz/MainGUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uladzislauharbuz/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uladzislauharbuz/MainGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +23,13 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Shadasviar &lt;shadasviarus@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="ProjectId" id="1VFTKU5nq1WS7coDaMCaSLHxa3a" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -39,7 +45,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="393" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="956" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="801" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -181,6 +187,21 @@
       <workItem from="1577105735680" duration="6000" />
       <workItem from="1577108923795" duration="3390000" />
     </task>
+    <task id="LOCAL-00001" summary="Add simple GUI with tabs&#10;Implement network initialization in GUI&#10;Implement network training in GUI&#10;Implement trained network read and write to file">
+      <created>1577376078417</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1577376078417</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add simple GUI with tabs&#10;Implement network initialization in GUI&#10;Implement network training in GUI&#10;Implement trained network read and write to file">
+      <created>1577388309837</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1577388309837</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,39 +220,75 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add simple GUI with tabs&#10;Implement network initialization in GUI&#10;Implement network training in GUI&#10;Implement trained network read and write to file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add simple GUI with tabs&#10;Implement network initialization in GUI&#10;Implement network training in GUI&#10;Implement trained network read and write to file" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="906" y="259" key="#Project_Structure" timestamp="1577359970213">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
     <state x="906" y="259" key="#Project_Structure/0.80.3840.2080@0.80.3840.2080" timestamp="1577359970213" />
-    <state x="1438" y="397" key="#com.intellij.ide.util.MemberChooser" timestamp="1577373098452">
+    <state x="1438" y="397" key="#com.intellij.ide.util.MemberChooser" timestamp="1577387756335">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state x="1438" y="397" key="#com.intellij.ide.util.MemberChooser/0.80.3840.2080@0.80.3840.2080" timestamp="1577373098452" />
-    <state x="1250" y="584" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1577363367744">
+    <state x="1438" y="397" key="#com.intellij.ide.util.MemberChooser/0.80.3840.2080@0.80.3840.2080" timestamp="1577387756335" />
+    <state x="1250" y="584" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1577383081208">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state x="1250" y="584" key="#com.intellij.ide.util.TreeFileChooserDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1577363367744" />
-    <state width="3726" height="517" key="GridCell.Tab.0.bottom" timestamp="1577375897907">
+    <state x="1250" y="584" key="#com.intellij.ide.util.TreeClassChooserDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1577383081208" />
+    <state x="1250" y="584" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1577382238348">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state width="3726" height="517" key="GridCell.Tab.0.bottom/0.80.3840.2080@0.80.3840.2080" timestamp="1577375897907" />
-    <state width="3726" height="517" key="GridCell.Tab.0.center" timestamp="1577375897906">
+    <state x="1250" y="584" key="#com.intellij.ide.util.TreeFileChooserDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1577382238348" />
+    <state x="1592" y="599" width="1390" height="1042" key="#com.intellij.uiDesigner.palette.ComponentItemDialog" timestamp="1577383084768">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state width="3726" height="517" key="GridCell.Tab.0.center/0.80.3840.2080@0.80.3840.2080" timestamp="1577375897906" />
-    <state width="3726" height="517" key="GridCell.Tab.0.left" timestamp="1577375897905">
+    <state x="1621" y="843" width="1207" height="554" key="#com.intellij.uiDesigner.palette.ComponentItemDialog.OneOff" timestamp="1577382863862">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state width="3726" height="517" key="GridCell.Tab.0.left/0.80.3840.2080@0.80.3840.2080" timestamp="1577375897905" />
-    <state width="3726" height="517" key="GridCell.Tab.0.right" timestamp="1577375897906">
+    <state x="1621" y="843" width="1207" height="554" key="#com.intellij.uiDesigner.palette.ComponentItemDialog.OneOff/0.80.3840.2080@0.80.3840.2080" timestamp="1577382863862" />
+    <state x="1592" y="599" width="1390" height="1042" key="#com.intellij.uiDesigner.palette.ComponentItemDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1577383084768" />
+    <state x="0" y="80" width="3840" height="2080" key="CommitChangelistDialog2" timestamp="1577388309178">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state width="3726" height="517" key="GridCell.Tab.0.right/0.80.3840.2080@0.80.3840.2080" timestamp="1577375897906" />
-    <state x="1112" y="716" key="com.intellij.ide.util.TipDialog" timestamp="1577374398894">
+    <state x="0" y="80" width="3840" height="2080" key="CommitChangelistDialog2/0.80.3840.2080@0.80.3840.2080" timestamp="1577388309178" />
+    <state width="3726" height="517" key="GridCell.Tab.0.bottom" timestamp="1577446257225">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state x="1112" y="716" key="com.intellij.ide.util.TipDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1577374398894" />
+    <state width="3726" height="517" key="GridCell.Tab.0.bottom/0.80.3840.2080@0.80.3840.2080" timestamp="1577446257225" />
+    <state width="3726" height="517" key="GridCell.Tab.0.center" timestamp="1577446257224">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state width="3726" height="517" key="GridCell.Tab.0.center/0.80.3840.2080@0.80.3840.2080" timestamp="1577446257224" />
+    <state width="3726" height="517" key="GridCell.Tab.0.left" timestamp="1577446257223">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state width="3726" height="517" key="GridCell.Tab.0.left/0.80.3840.2080@0.80.3840.2080" timestamp="1577446257223" />
+    <state width="3726" height="517" key="GridCell.Tab.0.right" timestamp="1577446257225">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state width="3726" height="517" key="GridCell.Tab.0.right/0.80.3840.2080@0.80.3840.2080" timestamp="1577446257225" />
+    <state width="3726" height="657" key="GridCell.Tab.1.bottom" timestamp="1577388417686">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state width="3726" height="657" key="GridCell.Tab.1.bottom/0.80.3840.2080@0.80.3840.2080" timestamp="1577388417686" />
+    <state width="3726" height="657" key="GridCell.Tab.1.center" timestamp="1577388417686">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state width="3726" height="657" key="GridCell.Tab.1.center/0.80.3840.2080@0.80.3840.2080" timestamp="1577388417686" />
+    <state width="3726" height="657" key="GridCell.Tab.1.left" timestamp="1577388417686">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state width="3726" height="657" key="GridCell.Tab.1.left/0.80.3840.2080@0.80.3840.2080" timestamp="1577388417686" />
+    <state width="3726" height="657" key="GridCell.Tab.1.right" timestamp="1577388417686">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state width="3726" height="657" key="GridCell.Tab.1.right/0.80.3840.2080@0.80.3840.2080" timestamp="1577388417686" />
+    <state x="1112" y="716" key="com.intellij.ide.util.TipDialog" timestamp="1577441950821">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state x="1112" y="716" key="com.intellij.ide.util.TipDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1577441950821" />
     <state x="1290" y="828" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog" timestamp="1577362998102">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>

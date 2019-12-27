@@ -18,7 +18,7 @@ public class Utils {
         return rescaled;
     }
 
-    static float[] imgToInputs(BufferedImage img) {
+    public static float[] imgToInputs(BufferedImage img) {
         int w = img.getWidth();
         int h = img.getWidth();
         float[] pixels = new float[(w*h) + 1]; // plus 1 for bias

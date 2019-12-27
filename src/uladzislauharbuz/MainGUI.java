@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pl.hubertkarbowy.MLPNetwork;
+import static pl.hubertkarbowy.Utils.imgToInputs;
 
 public class MainGUI {
     private JTabbedPane MainTabs;
@@ -39,8 +41,9 @@ public class MainGUI {
     private JLabel trainStatusLabel;
     private JTextArea stdoutTextArea;
     private JPanel drawingPanel;
-    private JTextField textField1;
+    private JTextField numberDetectedField;
     private JButton clearButton;
+    private JLabel numberDetectedLabel;
     private JDrawingArea drawingArea;
 
     private JFileChooser trainFileChooser = new JFileChooser();
@@ -78,7 +81,7 @@ public class MainGUI {
 
         drawingArea = new JDrawingArea();
         drawingArea.setSize(250,250);
-        drawingArea.setBackground(Color.WHITE);
+        drawingArea.setBackground(Color.BLACK);
         drawingArea.setVisible(true);
 
         openTrainSetButton.addActionListener(new ActionListener() {
@@ -187,9 +190,18 @@ public class MainGUI {
                 drawingArea.setDraw(true);
                 drawingArea.setCursor(e.getPoint(), 5);
                 drawingArea.repaint();
+                BufferedImage img = drawingArea.getImage
+                        ( (int)imageWidthSpinner.getValue()
+                        , (int)imageHeightSpinner.getValue());
+                float[] inputs = imgToInputs(img);
+                if (net.predictBinary(inputs)) {
+                    numberDetectedField.setText("3");
+                } else {
+                    numberDetectedField.setText("Not 3");
+                }
             }
         });
-        drawingPanel.add(drawingArea);
+        drawingPanel.add(drawingArea, BorderLayout.CENTER);
         drawingPanel.revalidate();
         clearButton.addActionListener(new ActionListener() {
             @Override
