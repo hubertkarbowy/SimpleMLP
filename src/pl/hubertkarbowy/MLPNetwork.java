@@ -22,7 +22,7 @@ public class MLPNetwork {
     private float maxDelta = 0.03f;   // by how much at most will we increase/decrease each weight
     private float percChange = 0.05f; // what percentage of weights to randomly change on each RHC iteration
     private int maxPatience = 30;     // number of RHC iterations after which to stop if no improvement was made
-    private int maxIter = 10500;       // total maximum number of RHC iterations
+    private int maxIter = 5000;       // total maximum number of RHC iterations
 
     private float randomFloat() {
         float f = (float)Math.random();
@@ -52,7 +52,7 @@ public class MLPNetwork {
         setInputs(new File(dirPath));
     }
 
-    public void setInputs(File dirPathAsFile) throws IOException { // todo: positive and negative examples
+    public void setInputs(File dirPathAsFile) throws IOException {
         File[] trainsetPath = dirPathAsFile.listFiles();
         List<String> dirNames = Arrays.asList(trainsetPath).stream().map(x -> x.getName()).collect(Collectors.toList());
         try {
@@ -207,18 +207,23 @@ public class MLPNetwork {
         }
     }
 
-    public void restoreModel(String srcPath) throws IOException, ClassNotFoundException {
+    public static MLPNetwork restoreModel(String srcPath) throws IOException, ClassNotFoundException {
         SerializedModel model = null;
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(srcPath))) {
             model = (SerializedModel) ois.readObject();
         }
-        this.neurons = model.neurons;
-        this.weights = model.weights;
-        this.maxDelta = model.maxDelta;
-        this.percChange = model.percChange;
-        this.maxPatience = model.maxPatience;
-        this.maxIter = model.maxIter;
+        int[] savedNeurons = model.neurons;
+        MLPNetwork newNet = new MLPNetwork(savedNeurons);
+        newNet.neurons = model.neurons;
+        newNet.weights = model.weights;
+        newNet.maxDelta = model.maxDelta;
+        newNet.percChange = model.percChange;
+        newNet.maxPatience = model.maxPatience;
+        newNet.maxIter = model.maxIter;
+        return newNet;
     }
+
+    public int[] getNeurons() { return neurons; }
 
     public float[][] getInputs() { return this.inputs; }
 

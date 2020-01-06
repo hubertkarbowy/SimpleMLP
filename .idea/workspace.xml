@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="682aba9f-713a-42c9-be4a-5bc6de5ba689" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/hubertkarbowy/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uladzislauharbuz/JDrawingArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uladzislauharbuz/JDrawingArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/hubertkarbowy/MLPNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/MLPNetwork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/hubertkarbowy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/uladzislauharbuz/MainGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/uladzislauharbuz/MainGUI.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/uladzislauharbuz/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uladzislauharbuz/MainGUI.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,8 +45,9 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="393" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="801" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="329" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -53,6 +55,18 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Application.MainGUI">
     <configuration default="true" type="Applet">
@@ -153,22 +167,10 @@
       <list>
         <item itemvalue="Application.MainGUI" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.MLPNetworkTests.binaryCrossEntropyTest" />
         <item itemvalue="JUnit.MLPNetworkTests" />
+        <item itemvalue="JUnit.MLPNetworkTests.binaryCrossEntropyTest" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -186,6 +188,7 @@
       <workItem from="1577095926828" duration="9752000" />
       <workItem from="1577105735680" duration="6000" />
       <workItem from="1577108923795" duration="3390000" />
+      <workItem from="1578325579272" duration="13314000" />
     </task>
     <task id="LOCAL-00001" summary="Add simple GUI with tabs&#10;Implement network initialization in GUI&#10;Implement network training in GUI&#10;Implement trained network read and write to file">
       <created>1577376078417</created>

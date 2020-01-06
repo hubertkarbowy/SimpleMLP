@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="1665" height="637"/>
+      <xy x="20" y="20" width="1665" height="715"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -15,134 +15,147 @@
         <properties/>
         <border type="none"/>
         <children>
-          <grid id="c85f6" layout-manager="GridLayoutManager" row-count="6" column-count="10" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="c85f6" layout-manager="GridLayoutManager" row-count="5" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
-              <tabbedpane title="Network"/>
+              <tabbedpane title="Model"/>
             </constraints>
             <properties/>
             <border type="none"/>
             <children>
               <component id="1ef8e" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Input image size"/>
+                  <text value="1. Define image input size:"/>
                 </properties>
               </component>
-              <vspacer id="47e64">
-                <constraints>
-                  <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-                </constraints>
-              </vspacer>
               <component id="ce52a" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="7" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Layers:"/>
+                  <text value="2. Add neurons in next layer:"/>
+                </properties>
+              </component>
+              <component id="4a9ae" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="3. Build model:"/>
+                </properties>
+              </component>
+              <component id="2ff8a" class="javax.swing.JButton" binding="deleteLayerButton" default-binding="true">
+                <constraints>
+                  <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Delete selected layer"/>
                 </properties>
               </component>
               <component id="e9454" class="javax.swing.JList" binding="layersList">
                 <constraints>
-                  <grid row="0" column="7" row-span="4" col-span="3" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                  <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="50"/>
                   </grid>
                 </constraints>
-                <properties/>
-              </component>
-              <component id="a510e" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
                 <properties>
-                  <text value="Layer neurons number:"/>
+                  <model/>
                 </properties>
               </component>
               <component id="34f36" class="javax.swing.JSpinner" binding="layerNeuronsSpinner">
                 <constraints>
-                  <grid row="3" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="95" height="30"/>
+                    <preferred-size width="95" height="30"/>
+                    <maximum-size width="95" height="30"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="a85ec" class="javax.swing.JSpinner" binding="imageWidthSpinner">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="95" height="30"/>
+                    <preferred-size width="95" height="30"/>
+                    <maximum-size width="95" height="30"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="3d91" class="javax.swing.JButton" binding="createNetworkButton" default-binding="true">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Build"/>
+                </properties>
+              </component>
+              <component id="e1981" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Layer definitions:"/>
+                </properties>
+              </component>
+              <component id="5499" class="javax.swing.JSeparator">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="6" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="93275" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="OR:"/>
+                </properties>
+              </component>
+              <component id="a5c81" class="javax.swing.JButton" binding="openModelButton" default-binding="true">
+                <constraints>
+                  <grid row="4" column="1" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Open pretrained model"/>
+                </properties>
+              </component>
+              <component id="453cb" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="by"/>
+                </properties>
+              </component>
+              <component id="2a465" class="javax.swing.JSpinner" binding="imageHeightSpinner">
+                <constraints>
+                  <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="95" height="30"/>
+                    <preferred-size width="95" height="30"/>
+                    <maximum-size width="95" height="30"/>
+                  </grid>
                 </constraints>
                 <properties/>
               </component>
               <component id="9cf04" class="javax.swing.JButton" binding="addLayerButton" default-binding="true">
                 <constraints>
-                  <grid row="2" column="3" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Add layer"/>
-                </properties>
-              </component>
-              <component id="2ff8a" class="javax.swing.JButton" binding="deleteLayerButton" default-binding="true">
-                <constraints>
-                  <grid row="3" column="3" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <text value="Delete layer"/>
-                </properties>
-              </component>
-              <component id="3d91" class="javax.swing.JButton" binding="createNetworkButton" default-binding="true">
-                <constraints>
-                  <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <text value="Create network"/>
+                  <text value="OK"/>
                 </properties>
               </component>
               <component id="13d5" class="javax.swing.JLabel" binding="netStatusLabel">
                 <constraints>
-                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="2" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Network is not created"/>
+                  <text value="[not ready]"/>
                 </properties>
-              </component>
-              <grid id="a789e" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                <margin top="0" left="0" bottom="0" right="0"/>
-                <constraints>
-                  <grid row="5" column="9" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="6" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties/>
-                <border type="none"/>
-                <children>
-                  <component id="94bda" class="javax.swing.JButton" binding="saveModelButton" default-binding="true">
-                    <constraints>
-                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                    <properties>
-                      <text value="Save model"/>
-                    </properties>
-                  </component>
-                  <component id="a5c81" class="javax.swing.JButton" binding="openModelButton" default-binding="true">
-                    <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                    <properties>
-                      <text value="Open model"/>
-                    </properties>
-                  </component>
-                </children>
-              </grid>
-              <component id="a85ec" class="javax.swing.JSpinner" binding="imageWidthSpinner">
-                <constraints>
-                  <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties/>
-              </component>
-              <component id="ef4ea" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <text value="X"/>
-                </properties>
-              </component>
-              <component id="2a465" class="javax.swing.JSpinner" binding="imageHeightSpinner">
-                <constraints>
-                  <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties/>
               </component>
             </children>
           </grid>
@@ -154,30 +167,17 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="cb40c" class="javax.swing.JTextField" binding="trainFilePathField">
-                <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <editable value="false"/>
-                </properties>
-              </component>
-              <vspacer id="f405f">
-                <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-                </constraints>
-              </vspacer>
               <component id="1ed31" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="1" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Input file"/>
+                  <text value="Input dir"/>
                 </properties>
               </component>
               <component id="1e358" class="javax.swing.JButton" binding="openTrainSetButton">
                 <constraints>
-                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <enabled value="true"/>
@@ -185,25 +185,49 @@
                   <text value=""/>
                 </properties>
               </component>
-              <component id="d3b70" class="javax.swing.JButton" binding="trainButton" default-binding="true">
+              <component id="cb40c" class="javax.swing.JTextField" binding="trainFilePathField">
                 <constraints>
-                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="5" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="9" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Train"/>
+                  <editable value="false"/>
+                  <margin top="2" left="6" bottom="2" right="6"/>
                 </properties>
               </component>
               <component id="62145" class="javax.swing.JLabel" binding="trainStatusLabel">
                 <constraints>
-                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value=""/>
+                  <text value="[status]"/>
                 </properties>
               </component>
+              <grid id="164ba" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="d3b70" class="javax.swing.JButton" binding="trainButton" default-binding="true">
+                    <constraints/>
+                    <properties>
+                      <enabled value="true"/>
+                      <text value="Train"/>
+                    </properties>
+                  </component>
+                  <component id="f2be5" class="javax.swing.JButton" binding="saveModelButton" default-binding="true">
+                    <constraints/>
+                    <properties>
+                      <enabled value="false"/>
+                      <text value="Save"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
             </children>
           </grid>
-          <grid id="9d6b2" binding="RunTab" layout-manager="GridLayoutManager" row-count="4" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="9d6b2" binding="RunTab" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="Run"/>
@@ -211,17 +235,37 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="2f278" class="javax.swing.JLabel" binding="numberDetectedLabel">
+              <grid id="f3baa" binding="drawingPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
                 <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="3" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="1" use-parent-layout="false">
+                    <minimum-size width="250" height="250"/>
+                    <preferred-size width="250" height="250"/>
+                    <maximum-size width="250" height="250"/>
+                  </grid>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children/>
+              </grid>
+              <component id="2a740" class="javax.swing.JButton" binding="numberDetectedLabel">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Number detected:"/>
+                  <text value="Check result"/>
+                </properties>
+              </component>
+              <component id="4d8f8" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="&lt;--- Draw the shape here"/>
                 </properties>
               </component>
               <component id="d8f84" class="javax.swing.JTextField" binding="numberDetectedField">
                 <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="6" anchor="10" fill="0" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
@@ -229,25 +273,9 @@
                   <editable value="false"/>
                 </properties>
               </component>
-              <component id="4d8f8" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <text value="Draw your number:"/>
-                </properties>
-              </component>
-              <grid id="f3baa" binding="drawingPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
-                <constraints>
-                  <grid row="2" column="1" row-span="2" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties/>
-                <border type="none"/>
-                <children/>
-              </grid>
               <component id="38c80" class="javax.swing.JButton" binding="clearButton" default-binding="true">
                 <constraints>
-                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="6" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <text value="Clear"/>
@@ -258,7 +286,7 @@
           <grid id="eb1c1" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
-              <tabbedpane title="Author rights"/>
+              <tabbedpane title="Authors"/>
             </constraints>
             <properties/>
             <border type="none"/>
@@ -271,7 +299,7 @@
                 </constraints>
                 <properties>
                   <editable value="false"/>
-                  <text value="Freepik from www.flaticon.com"/>
+                  <text value="Authors: Hubert Karbowy, Uładzislau Harbuz. Freepik from www.flaticon.com" noi18n="true"/>
                 </properties>
               </component>
             </children>
@@ -280,7 +308,9 @@
       </tabbedpane>
       <scrollpane id="d8f58">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <minimum-size width="-1" height="300"/>
+          </grid>
         </constraints>
         <properties/>
         <border type="none"/>
