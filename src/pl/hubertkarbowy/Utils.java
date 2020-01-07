@@ -5,10 +5,42 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Utils {
+
+    static void train_test_split(Path start, String trueClass, Path out,
+                                 int numTrain, int numValid, int numTest) throws IOException { // assume f points to a directory containing subdirs with
+        // positive example (trueClass) and negative examples (all others)
+        List<Path> alles = Files.walk(start).collect(Collectors.toList());
+        List<Path> pos = alles.stream().filter(p -> p.getParent().getFileName().toString().equals(trueClass)).collect(Collectors.toList());
+        List<Path> neg = alles.stream().filter(p -> !p.getParent().getFileName().toString().equals(trueClass)).collect(Collectors.toList());
+        System.out.println(neg);
+
+        Collections.shuffle(pos);
+        Collections.shuffle(neg);
+
+        int last_idx = 0;
+        String[] subdirs = {"train", "valid", "test"};
+        for (String subdir : subdirs) {
+            Files.createDirectories(out.resolve(subdir).resolve("pos"));
+            Files.createDirectories(out.resolve(subdir).resolve("neg"));
+            int shiftBy = subdir.equals("train") ? numTrain : subdir.equals("valid") ? numValid : numTest;
+            List<Path> thisPos = pos.subList(last_idx, last_idx+shiftBy);
+            List<Path> thisNeg = neg.subList(last_idx, last_idx+shiftBy);
+            for (int i = 0; i < thisPos.size(); i++) {
+                Files.copy(thisPos.get(i), out.resolve(subdir).resolve("pos").resolve("" + i + "_pic.jpg"));
+                Files.copy(thisNeg.get(i), out.resolve(subdir).resolve("neg").resolve("" + i + "_pic.jpg"));
+            }
+            last_idx += shiftBy;
+        }
+    }
+
     static BufferedImage loadAndRescale(File f, int imgWidthAndHeight) throws IOException {
         BufferedImage img = ImageIO.read(f);
         BufferedImage rescaled = new BufferedImage(imgWidthAndHeight, imgWidthAndHeight, BufferedImage.TYPE_BYTE_GRAY);

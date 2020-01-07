@@ -3,41 +3,97 @@ package pl.hubertkarbowy;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import com.beust.jcommander.*;
 
 import static pl.hubertkarbowy.Utils.imgToInputs;
 import static pl.hubertkarbowy.Utils.loadAndRescale;
+import static pl.hubertkarbowy.Utils.train_test_split;
 
 public class Main {
     final static int imgWidthAndHeight = 28;
     final static int[] layerDefs = new int[]{imgWidthAndHeight*imgWidthAndHeight, 1};
     static MLPNetwork net = new MLPNetwork(layerDefs);
-    // final static String currentDir = System.getProperty("user.dir") + "/";
-    final static String currentDir = "/wymiana/Projekty/Studia/MY1wlasne/wrn/SimpleMLP/";
 
-    public static void trainAndSave() throws IOException {
-        net.setInputs(currentDir + "other/train2");
+    public static void trainAndSave(String trainDir, String outFile) throws IOException {
+        net.setInputs(trainDir);
         System.out.println(net.toString());
         net.train();
         System.out.println("Loss = " + net.binaryCrossEntropyLoss());
-        net.saveModel(currentDir + "other/pretrained2.ser");
+        net.saveModel(outFile);
     }
 
-    public static void runPredictions() throws IOException, ClassNotFoundException {
-        String[] images = {currentDir + "other/test1/three_11.png",
-                           currentDir + "other/test1/one_2.png",
-                           currentDir + "other/test1/eight_2.png"};
-        net = net.restoreModel(currentDir + "other/pretrained2.ser");
-        for (String imgPath : images) {
-            BufferedImage img = loadAndRescale(new File(imgPath), imgWidthAndHeight);
+    public static void runPredictions(String modelPath, String testDir) throws ClassNotFoundException, IOException {
+        net = net.restoreModel(modelPath);
+        List<Path> allTestFiles = Files.walk(Paths.get(testDir))
+                                       .filter(p -> (p.getParent().endsWith("pos") || p.getParent().endsWith("neg")))
+                                       .collect(Collectors.toList());
+        int tp=0, fp=0, fn=0;
+        int actp=0, actn=0;
+        float prec=0.0f, recall=0.0f, f1=0.0f;
+
+        for (Path imgPath : allTestFiles) {
+            BufferedImage img = loadAndRescale(imgPath.toFile(), imgWidthAndHeight);
             float inputs[] = imgToInputs(img);
-            System.out.println(imgPath + " => " + net.predictBinary(inputs));
+            boolean prediction = net.predictBinary(inputs);
+            System.out.println(imgPath + " => " + prediction);
+            if (imgPath.getParent().endsWith("pos")) {
+                actp++;
+                if (prediction == true) tp++;
+                else fn++;
+            }
+            else if (imgPath.getParent().endsWith("neg")) {
+                actn++;
+                if (prediction == true) fp++;
+            }
         }
+        prec = (float)tp / (tp + fp);
+        recall = (float)tp / (tp + fn);
+        f1 = 2*((prec*recall)/(prec + recall));
+        System.out.println("SUMMARY RESULTS: ");
+        System.out.println("   Precision: " + tp + "/" + (tp + fp) + " = " + prec);
+        System.out.println("      Recall: " + tp + "/" + (tp + fn) + " = " + recall);
+        System.out.println("          F1: " + f1);
     }
+
+
+    /*
+    Uzycie:
+    0) Sciagnac MNIST as JPG stad: https://www.kaggle.com/scolianni/mnistasjpg i przeniesc gdzies
+    1) Przygotowanie zbiorow treningowych, walidacyjnych (na razie nie uzywane) i testowych. Program arguments:
+
+       -trainset /home/hubert/wymiana/Projekty/Studia/MY1wlasne/wrn/mnist_all/trainingSet/trainingSet/
+       -truelabel "3"      <---------------------- tutaj cyfra do rozpoznania
+       -outdir /home/hubert/wymiana/Projekty/Studia/MY1wlasne/wrn/wyj-train1000
+       -split
+
+     2) Trening (puscic kilka razy najlepiej a potem srednie wyniki liczyc przy ewaluacji). Program arguments:
+        -trainset /home/hubert/wymiana/Projekty/Studia/MY1wlasne/wrn/wyj-train1000/train/
+        -outdir /home/hubert/wymiana/Projekty/Studia/MY1wlasne/wrn/ser1000-1.ser
+        -train
+
+     3) Ewaluacja. Program arguments:
+        -testset /home/hubert/wymiana/Projekty/Studia/MY1wlasne/wrn/wyj-train1000/test/
+        -pretrained /home/hubert/wymiana/Projekty/Studia/MY1wlasne/wrn/ser1000-1.ser
+        -runeval
+     */
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        // trainAndSave();
-        runPredictions();
-        for (int p : net.getNeurons()) System.out.println(p);
+        Args cmdargs = new Args();
+        JCommander.newBuilder().addObject(cmdargs).build().parse(args);
+        if (cmdargs.split) {
+            train_test_split(Paths.get(cmdargs.trainset), cmdargs.truelabel, Paths.get(cmdargs.outdir), 1000, 20, 50);
+        }
+        else if (cmdargs.train) {
+            trainAndSave(cmdargs.trainset, cmdargs.outdir);
+        }
+        else if (cmdargs.runeval) {
+            runPredictions(cmdargs.pretrained, cmdargs.testset);
+        }
     }
 }

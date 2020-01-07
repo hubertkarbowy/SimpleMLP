@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="682aba9f-713a-42c9-be4a-5bc6de5ba689" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_beust_jcommander_1_78.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/Args.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/hubertkarbowy/MLPNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/MLPNetwork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleMLP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleMLP.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pl/hubertkarbowy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uladzislauharbuz/MainGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/uladzislauharbuz/MainGUI.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uladzislauharbuz/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uladzislauharbuz/MainGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/hubertkarbowy/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/Utils.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +52,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -68,19 +68,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MainGUI">
+  <component name="RunManager" selected="Application.Main_split">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="pl.hubertkarbowy.Main" />
-      <module name="SimpleMLP" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -95,6 +85,32 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main_eval" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="pl.hubertkarbowy.Main" />
+      <module name="SimpleMLP" />
+      <option name="PROGRAM_PARAMETERS" value="-testset $USER_HOME$$PROJECT_DIR$/../../../../../Projekty/Studia/MY1wlasne/wrn/wyj-train1000/test/ -runeval -pretrained $USER_HOME$$PROJECT_DIR$/../../../../../Projekty/Studia/MY1wlasne/wrn/ser1000-1.ser" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main_split" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="pl.hubertkarbowy.Main" />
+      <module name="SimpleMLP" />
+      <option name="PROGRAM_PARAMETERS" value="-trainset $USER_HOME$$PROJECT_DIR$/../../../../../Projekty/Studia/MY1wlasne/wrn/mnist_all/trainingSet/trainingSet/ -truelabel &quot;3&quot; -outdir $USER_HOME$$PROJECT_DIR$/../../../../../Projekty/Studia/MY1wlasne/wrn/wyjscie -split" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main_train" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="pl.hubertkarbowy.Main" />
+      <module name="SimpleMLP" />
+      <option name="PROGRAM_PARAMETERS" value="-trainset $USER_HOME$$PROJECT_DIR$/../../../../../Projekty/Studia/MY1wlasne/wrn/wyj-train1000/train/ -train -outdir $USER_HOME$$PROJECT_DIR$/../../../../../Projekty/Studia/MY1wlasne/wrn/ser1000.ser" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -163,10 +179,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main_eval" />
+      <item itemvalue="Application.Main_split" />
+      <item itemvalue="Application.Main_train" />
+      <item itemvalue="Application.MainGUI" />
+      <item itemvalue="JUnit.MLPNetworkTests" />
+      <item itemvalue="JUnit.MLPNetworkTests.binaryCrossEntropyTest" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainGUI" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.MLPNetworkTests" />
         <item itemvalue="JUnit.MLPNetworkTests.binaryCrossEntropyTest" />
       </list>
@@ -188,7 +211,8 @@
       <workItem from="1577095926828" duration="9752000" />
       <workItem from="1577105735680" duration="6000" />
       <workItem from="1577108923795" duration="3390000" />
-      <workItem from="1578325579272" duration="13314000" />
+      <workItem from="1578325579272" duration="17764000" />
+      <workItem from="1578426507101" duration="5523000" />
     </task>
     <task id="LOCAL-00001" summary="Add simple GUI with tabs&#10;Implement network initialization in GUI&#10;Implement network training in GUI&#10;Implement trained network read and write to file">
       <created>1577376078417</created>
