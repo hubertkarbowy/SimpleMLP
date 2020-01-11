@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="682aba9f-713a-42c9-be4a-5bc6de5ba689" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/SerializedModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_beust_jcommander_1_78.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/Args.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/other/mnist_sample.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/other/obliczenia.ods" beforeDir="false" afterPath="$PROJECT_DIR$/other/obliczenia.ods" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/other/train1/one_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/test/pl/hubertkarbowy/train1/one_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/hubertkarbowy/MLPNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/MLPNetwork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleMLP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleMLP.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pl/hubertkarbowy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pl/hubertkarbowy/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/pl/hubertkarbowy/MLPNetworkTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/pl/hubertkarbowy/MLPNetworkTests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,21 +24,35 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Shadasviar &lt;shadasviarus@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="ProjectId" id="1VFTKU5nq1WS7coDaMCaSLHxa3a" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="393" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="329" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -58,17 +68,47 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Main_split">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+    <configuration name="MainGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="uladzislauharbuz.MainGUI" />
+      <module name="SimpleMLP" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uladzislauharbuz.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main_eval" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="pl.hubertkarbowy.Main" />
       <module name="SimpleMLP" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="PROGRAM_PARAMETERS" value="-testset $USER_HOME$$PROJECT_DIR$/../../../../../Projekty/Studia/MY1wlasne/wrn/wyj-train1000/test/ -runeval -pretrained $USER_HOME$$PROJECT_DIR$/../../../../../Projekty/Studia/MY1wlasne/wrn/ser1000-1.ser" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main_split" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="pl.hubertkarbowy.Main" />
+      <module name="SimpleMLP" />
+      <option name="PROGRAM_PARAMETERS" value="-trainset $USER_HOME$$PROJECT_DIR$/../../../../../Projekty/Studia/MY1wlasne/wrn/mnist_all/trainingSet/trainingSet/ -truelabel &quot;3&quot; -outdir $USER_HOME$$PROJECT_DIR$/../../../../../Projekty/Studia/MY1wlasne/wrn/wyjscie -split" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main_train" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="pl.hubertkarbowy.Main" />
+      <module name="SimpleMLP" />
+      <option name="PROGRAM_PARAMETERS" value="-trainset $USER_HOME$$PROJECT_DIR$/../../../../../Projekty/Studia/MY1wlasne/wrn/wyj-train1000/train/ -train -outdir $USER_HOME$$PROJECT_DIR$/../../../../../Projekty/Studia/MY1wlasne/wrn/ser1000.ser" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -139,11 +179,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main_eval" />
+      <item itemvalue="Application.Main_split" />
+      <item itemvalue="Application.Main_train" />
+      <item itemvalue="Application.MainGUI" />
+      <item itemvalue="JUnit.MLPNetworkTests" />
+      <item itemvalue="JUnit.MLPNetworkTests.binaryCrossEntropyTest" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.MLPNetworkTests.binaryCrossEntropyTest" />
+        <item itemvalue="Application.MainGUI" />
         <item itemvalue="JUnit.MLPNetworkTests" />
+        <item itemvalue="JUnit.MLPNetworkTests.binaryCrossEntropyTest" />
       </list>
     </recent_temporary>
   </component>
@@ -163,7 +211,24 @@
       <workItem from="1577095926828" duration="9752000" />
       <workItem from="1577105735680" duration="6000" />
       <workItem from="1577108923795" duration="3390000" />
+      <workItem from="1578325579272" duration="17764000" />
+      <workItem from="1578426507101" duration="5523000" />
     </task>
+    <task id="LOCAL-00001" summary="Add simple GUI with tabs&#10;Implement network initialization in GUI&#10;Implement network training in GUI&#10;Implement trained network read and write to file">
+      <created>1577376078417</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1577376078417</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add simple GUI with tabs&#10;Implement network initialization in GUI&#10;Implement network training in GUI&#10;Implement trained network read and write to file">
+      <created>1577388309837</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1577388309837</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,5 +246,79 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add simple GUI with tabs&#10;Implement network initialization in GUI&#10;Implement network training in GUI&#10;Implement trained network read and write to file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add simple GUI with tabs&#10;Implement network initialization in GUI&#10;Implement network training in GUI&#10;Implement trained network read and write to file" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="906" y="259" key="#Project_Structure" timestamp="1577359970213">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state x="906" y="259" key="#Project_Structure/0.80.3840.2080@0.80.3840.2080" timestamp="1577359970213" />
+    <state x="1438" y="397" key="#com.intellij.ide.util.MemberChooser" timestamp="1577387756335">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state x="1438" y="397" key="#com.intellij.ide.util.MemberChooser/0.80.3840.2080@0.80.3840.2080" timestamp="1577387756335" />
+    <state x="1250" y="584" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1577383081208">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state x="1250" y="584" key="#com.intellij.ide.util.TreeClassChooserDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1577383081208" />
+    <state x="1250" y="584" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1577382238348">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state x="1250" y="584" key="#com.intellij.ide.util.TreeFileChooserDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1577382238348" />
+    <state x="1592" y="599" width="1390" height="1042" key="#com.intellij.uiDesigner.palette.ComponentItemDialog" timestamp="1577383084768">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state x="1621" y="843" width="1207" height="554" key="#com.intellij.uiDesigner.palette.ComponentItemDialog.OneOff" timestamp="1577382863862">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state x="1621" y="843" width="1207" height="554" key="#com.intellij.uiDesigner.palette.ComponentItemDialog.OneOff/0.80.3840.2080@0.80.3840.2080" timestamp="1577382863862" />
+    <state x="1592" y="599" width="1390" height="1042" key="#com.intellij.uiDesigner.palette.ComponentItemDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1577383084768" />
+    <state x="0" y="80" width="3840" height="2080" key="CommitChangelistDialog2" timestamp="1577388309178">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state x="0" y="80" width="3840" height="2080" key="CommitChangelistDialog2/0.80.3840.2080@0.80.3840.2080" timestamp="1577388309178" />
+    <state width="3726" height="517" key="GridCell.Tab.0.bottom" timestamp="1577446257225">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state width="3726" height="517" key="GridCell.Tab.0.bottom/0.80.3840.2080@0.80.3840.2080" timestamp="1577446257225" />
+    <state width="3726" height="517" key="GridCell.Tab.0.center" timestamp="1577446257224">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state width="3726" height="517" key="GridCell.Tab.0.center/0.80.3840.2080@0.80.3840.2080" timestamp="1577446257224" />
+    <state width="3726" height="517" key="GridCell.Tab.0.left" timestamp="1577446257223">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state width="3726" height="517" key="GridCell.Tab.0.left/0.80.3840.2080@0.80.3840.2080" timestamp="1577446257223" />
+    <state width="3726" height="517" key="GridCell.Tab.0.right" timestamp="1577446257225">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state width="3726" height="517" key="GridCell.Tab.0.right/0.80.3840.2080@0.80.3840.2080" timestamp="1577446257225" />
+    <state width="3726" height="657" key="GridCell.Tab.1.bottom" timestamp="1577388417686">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state width="3726" height="657" key="GridCell.Tab.1.bottom/0.80.3840.2080@0.80.3840.2080" timestamp="1577388417686" />
+    <state width="3726" height="657" key="GridCell.Tab.1.center" timestamp="1577388417686">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state width="3726" height="657" key="GridCell.Tab.1.center/0.80.3840.2080@0.80.3840.2080" timestamp="1577388417686" />
+    <state width="3726" height="657" key="GridCell.Tab.1.left" timestamp="1577388417686">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state width="3726" height="657" key="GridCell.Tab.1.left/0.80.3840.2080@0.80.3840.2080" timestamp="1577388417686" />
+    <state width="3726" height="657" key="GridCell.Tab.1.right" timestamp="1577388417686">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state width="3726" height="657" key="GridCell.Tab.1.right/0.80.3840.2080@0.80.3840.2080" timestamp="1577388417686" />
+    <state x="1112" y="716" key="com.intellij.ide.util.TipDialog" timestamp="1577441950821">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state x="1112" y="716" key="com.intellij.ide.util.TipDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1577441950821" />
+    <state x="1290" y="828" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog" timestamp="1577362998102">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state x="1290" y="828" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1577362998102" />
   </component>
 </project>
