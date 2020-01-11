@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="1665" height="715"/>
+      <xy x="20" y="20" width="1665" height="927"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -15,7 +15,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <grid id="c85f6" layout-manager="GridLayoutManager" row-count="5" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="c85f6" layout-manager="GridLayoutManager" row-count="9" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="Model"/>
@@ -41,15 +41,15 @@
               </component>
               <component id="4a9ae" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="3. Build model:"/>
+                  <text value="4. Build model:"/>
                 </properties>
               </component>
               <component id="2ff8a" class="javax.swing.JButton" binding="deleteLayerButton" default-binding="true">
                 <constraints>
-                  <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="6" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <text value="Delete selected layer"/>
@@ -87,7 +87,7 @@
               </component>
               <component id="3d91" class="javax.swing.JButton" binding="createNetworkButton" default-binding="true">
                 <constraints>
-                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <text value="Build"/>
@@ -103,13 +103,13 @@
               </component>
               <component id="5499" class="javax.swing.JSeparator">
                 <constraints>
-                  <grid row="3" column="0" row-span="1" col-span="6" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <grid row="7" column="0" row-span="1" col-span="6" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties/>
               </component>
               <component id="93275" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <text value="OR:"/>
@@ -117,7 +117,7 @@
               </component>
               <component id="a5c81" class="javax.swing.JButton" binding="openModelButton" default-binding="true">
                 <constraints>
-                  <grid row="4" column="1" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="8" column="1" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <text value="Open pretrained model"/>
@@ -151,11 +151,91 @@
               </component>
               <component id="13d5" class="javax.swing.JLabel" binding="netStatusLabel">
                 <constraints>
-                  <grid row="2" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="6" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <text value="[not ready]"/>
                 </properties>
+              </component>
+              <component id="a166b" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="3. Configure network:"/>
+                </properties>
+              </component>
+              <component id="7a7f7" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Max delta:"/>
+                </properties>
+              </component>
+              <component id="d60ce" class="javax.swing.JSpinner" binding="maxDeltaSpinner">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="95" height="30"/>
+                    <preferred-size width="95" height="30"/>
+                    <maximum-size width="95" height="30"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="279d4" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Change percent:"/>
+                </properties>
+              </component>
+              <component id="e38d6" class="javax.swing.JSpinner" binding="percChangeSpinner">
+                <constraints>
+                  <grid row="3" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="95" height="30"/>
+                    <preferred-size width="95" height="30"/>
+                    <maximum-size width="95" height="30"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="5ad54" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Max patient:"/>
+                </properties>
+              </component>
+              <component id="d3602" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="4" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Max iteration:"/>
+                </properties>
+              </component>
+              <component id="1bccc" class="javax.swing.JSpinner" binding="maxPatientSpinner">
+                <constraints>
+                  <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="95" height="30"/>
+                    <preferred-size width="95" height="30"/>
+                    <maximum-size width="95" height="30"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="69e1b" class="javax.swing.JSpinner" binding="maxIterationSpinner">
+                <constraints>
+                  <grid row="5" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="95" height="30"/>
+                    <preferred-size width="95" height="30"/>
+                    <maximum-size width="95" height="30"/>
+                  </grid>
+                </constraints>
+                <properties/>
               </component>
             </children>
           </grid>
@@ -191,7 +271,7 @@
                 </constraints>
                 <properties>
                   <editable value="false"/>
-                  <margin top="2" left="6" bottom="2" right="6"/>
+                  <margin top="5" left="15" bottom="5" right="15"/>
                 </properties>
               </component>
               <component id="62145" class="javax.swing.JLabel" binding="trainStatusLabel">
@@ -294,7 +374,7 @@
               <component id="b13c1" class="javax.swing.JTextArea" binding="authorText">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="50"/>
+                    <preferred-size width="150" height="315"/>
                   </grid>
                 </constraints>
                 <properties>

@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="682aba9f-713a-42c9-be4a-5bc6de5ba689" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_beust_jcommander_1_78.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/Args.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimpleMLP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleMLP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/hubertkarbowy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/hubertkarbowy/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/hubertkarbowy/MLPNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/MLPNetwork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uladzislauharbuz/MainGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/uladzislauharbuz/MainGUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uladzislauharbuz/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uladzislauharbuz/MainGUI.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +45,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="393" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="329" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="580" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -56,19 +54,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.Main_split">
+  <component name="RunManager" selected="Application.MainGUI">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -195,6 +181,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -268,6 +266,10 @@
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
     <state x="1250" y="584" key="#com.intellij.ide.util.TreeFileChooserDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1577382238348" />
+    <state x="1532" y="932" width="993" height="708" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1578764448920">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state x="1532" y="932" width="993" height="708" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1578764448920" />
     <state x="1592" y="599" width="1390" height="1042" key="#com.intellij.uiDesigner.palette.ComponentItemDialog" timestamp="1577383084768">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
@@ -280,22 +282,22 @@
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
     <state x="0" y="80" width="3840" height="2080" key="CommitChangelistDialog2/0.80.3840.2080@0.80.3840.2080" timestamp="1577388309178" />
-    <state width="3726" height="517" key="GridCell.Tab.0.bottom" timestamp="1577446257225">
+    <state width="3726" height="347" key="GridCell.Tab.0.bottom" timestamp="1578769751857">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state width="3726" height="517" key="GridCell.Tab.0.bottom/0.80.3840.2080@0.80.3840.2080" timestamp="1577446257225" />
-    <state width="3726" height="517" key="GridCell.Tab.0.center" timestamp="1577446257224">
+    <state width="3726" height="347" key="GridCell.Tab.0.bottom/0.80.3840.2080@0.80.3840.2080" timestamp="1578769751857" />
+    <state width="3726" height="347" key="GridCell.Tab.0.center" timestamp="1578769751856">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state width="3726" height="517" key="GridCell.Tab.0.center/0.80.3840.2080@0.80.3840.2080" timestamp="1577446257224" />
-    <state width="3726" height="517" key="GridCell.Tab.0.left" timestamp="1577446257223">
+    <state width="3726" height="347" key="GridCell.Tab.0.center/0.80.3840.2080@0.80.3840.2080" timestamp="1578769751856" />
+    <state width="3726" height="347" key="GridCell.Tab.0.left" timestamp="1578769751856">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state width="3726" height="517" key="GridCell.Tab.0.left/0.80.3840.2080@0.80.3840.2080" timestamp="1577446257223" />
-    <state width="3726" height="517" key="GridCell.Tab.0.right" timestamp="1577446257225">
+    <state width="3726" height="347" key="GridCell.Tab.0.left/0.80.3840.2080@0.80.3840.2080" timestamp="1578769751856" />
+    <state width="3726" height="347" key="GridCell.Tab.0.right" timestamp="1578769751857">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state width="3726" height="517" key="GridCell.Tab.0.right/0.80.3840.2080@0.80.3840.2080" timestamp="1577446257225" />
+    <state width="3726" height="347" key="GridCell.Tab.0.right/0.80.3840.2080@0.80.3840.2080" timestamp="1578769751857" />
     <state width="3726" height="657" key="GridCell.Tab.1.bottom" timestamp="1577388417686">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
@@ -312,13 +314,13 @@
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
     <state width="3726" height="657" key="GridCell.Tab.1.right/0.80.3840.2080@0.80.3840.2080" timestamp="1577388417686" />
-    <state x="1112" y="716" key="com.intellij.ide.util.TipDialog" timestamp="1577441950821">
+    <state x="1112" y="716" key="com.intellij.ide.util.TipDialog" timestamp="1578764382120">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state x="1112" y="716" key="com.intellij.ide.util.TipDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1577441950821" />
-    <state x="1290" y="828" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog" timestamp="1577362998102">
+    <state x="1112" y="716" key="com.intellij.ide.util.TipDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1578764382120" />
+    <state x="1290" y="828" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog" timestamp="1578765943033">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state x="1290" y="828" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1577362998102" />
+    <state x="1290" y="828" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1578765943033" />
   </component>
 </project>

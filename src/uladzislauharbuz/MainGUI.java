@@ -13,12 +13,9 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import pl.hubertkarbowy.MLPNetwork;
-import pl.hubertkarbowy.SerializedModel;
 
 import static pl.hubertkarbowy.Utils.imgToInputs;
 
@@ -47,6 +44,10 @@ public class MainGUI {
     private JTextField numberDetectedField;
     private JButton clearButton;
     private JButton numberDetectedLabel;
+    private JSpinner maxDeltaSpinner;
+    private JSpinner percChangeSpinner;
+    private JSpinner maxPatientSpinner;
+    private JSpinner maxIterationSpinner;
     private JDrawingArea drawingArea;
 
     private JFileChooser trainFileChooser = new JFileChooser();
@@ -54,8 +55,26 @@ public class MainGUI {
     private File saveTrainFile;
     private DefaultListModel layerListModel = new DefaultListModel();
 
-    private final JSpinner[] SPINNERS = {imageHeightSpinner, imageWidthSpinner, layerNeuronsSpinner};
-    private final JComponent[] CONTROLS_TO_DISABLE = {imageWidthSpinner, imageHeightSpinner, layerNeuronsSpinner, addLayerButton, createNetworkButton, layersList, deleteLayerButton};
+    private final JSpinner[] SPINNERS = {
+              imageHeightSpinner
+            , imageWidthSpinner
+            , layerNeuronsSpinner
+            , maxPatientSpinner
+            , maxIterationSpinner
+    };
+    private final JSpinner [] FLOAT_SPINNERS = {
+              maxDeltaSpinner
+            , percChangeSpinner
+    };
+    private final JComponent[] CONTROLS_TO_DISABLE = {
+              imageWidthSpinner
+            , imageHeightSpinner
+            , layerNeuronsSpinner
+            , addLayerButton
+            , createNetworkButton
+            , layersList
+            , deleteLayerButton
+    };
 
     private MLPNetwork net;
     {   /* Disallow character input for spinners*/
@@ -65,6 +84,14 @@ public class MainGUI {
             ((NumberFormatter)imgF.getFormatter()).setMinimum(1);
             spinner.setValue(1);
         }
+        for (JSpinner spinner : FLOAT_SPINNERS) {
+            SpinnerNumberModel nm = new SpinnerNumberModel(0.01, 0.01, 1000, 0.01);
+            spinner.setModel(nm);
+        }
+        maxDeltaSpinner.setValue(0.03);
+        percChangeSpinner.setValue(0.05);
+        maxPatientSpinner.setValue(30);
+        maxIterationSpinner.setValue(5000);
     }
 
     private void updateFirstLayer() {
@@ -143,7 +170,12 @@ public class MainGUI {
                     JOptionPane.showMessageDialog(null, "Not a binary classification network. Last layer must have a single output.");
                     return;
                 }
-                net = new MLPNetwork(layers);
+                net = new MLPNetwork(layers
+                        , (double)maxDeltaSpinner.getValue()
+                        , (double)percChangeSpinner.getValue()
+                        , (int)maxPatientSpinner.getValue()
+                        , (int)maxIterationSpinner.getValue()
+                );
                 Arrays.stream(CONTROLS_TO_DISABLE).forEach(c -> c.setEnabled(false));
                 netStatusLabel.setText("<html><font color=green><b>READY TO TRAIN</b></font></html>");
             }

@@ -48,6 +48,14 @@ public class MLPNetwork {
         }
     }
 
+    public MLPNetwork(int[] layersDefinition, double maxDelta, double percChange, int maxPatient, int maxIter) {
+        this(layersDefinition);
+        this.maxDelta = (float)maxDelta;
+        this.percChange = (float)percChange;
+        this.maxPatience = maxPatient;
+        this.maxIter = maxIter;
+    }
+
     public void setInputs(String dirPath) throws IOException {
         setInputs(new File(dirPath));
     }
