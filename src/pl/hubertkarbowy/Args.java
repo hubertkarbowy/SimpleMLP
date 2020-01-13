@@ -31,4 +31,17 @@ public class Args {
 
   @Parameter(names = "-runeval", description = "Run evaluation from a pretrained model and print results (requires -pretrained)")
   boolean runeval = false;
+
+  // Train parameters:
+  @Parameter(names = "-max-delta", description = "Set max delta of network")
+  double maxDelta = 0.03;
+
+  @Parameter(names = "-perc-change", description = "Set maximum percent of weights changing in one iteration")
+  double percChange = 0.05;
+
+  @Parameter(names = "-max-patience", description = "Set max patience")
+  int maxPatience = 30;
+
+  @Parameter(names = "-max-iter", description = "Set maximum number of iterations")
+  int maxIter = 5000;
 }

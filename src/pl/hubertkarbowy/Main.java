@@ -20,7 +20,15 @@ public class Main {
     final static int[] layerDefs = new int[]{imgWidthAndHeight*imgWidthAndHeight, 1};
     static MLPNetwork net = new MLPNetwork(layerDefs);
 
-    public static void trainAndSave(String trainDir, String outFile) throws IOException {
+    public static void trainAndSave
+            ( String trainDir
+            , String outFile
+            , double maxDelta
+            , double maxPercent
+            , int maxPatience
+            , int maxIter
+    ) throws IOException {
+        net = new MLPNetwork(layerDefs, maxDelta, maxPercent, maxPatience, maxIter);
         net.setInputs(trainDir);
         System.out.println(net.toString());
         net.train();
@@ -90,7 +98,13 @@ public class Main {
             train_test_split(Paths.get(cmdargs.trainset), cmdargs.truelabel, Paths.get(cmdargs.outdir), 1000, 20, 50);
         }
         else if (cmdargs.train) {
-            trainAndSave(cmdargs.trainset, cmdargs.outdir);
+            trainAndSave
+                    ( cmdargs.trainset
+                    , cmdargs.outdir
+                    , cmdargs.maxDelta
+                    , cmdargs.percChange
+                    , cmdargs.maxPatience
+                    , cmdargs.maxIter);
         }
         else if (cmdargs.runeval) {
             runPredictions(cmdargs.pretrained, cmdargs.testset);

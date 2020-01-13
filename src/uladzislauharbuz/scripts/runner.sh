@@ -15,7 +15,11 @@ mkdir ${TRAINOUT}
 ${RUNCOMMAND} -trainset ${TRAINSET} -truelabel "3" -outdir ${TRAINOUT} -split
 
 # Train
-${RUNCOMMAND} -trainset "${TRAINOUT}/train/" -outdir "${OUTDIR}/net.ser" -train
+TRAIN="${RUNCOMMAND} -trainset "${TRAINOUT}/train/" -outdir "${OUTDIR}/net.ser" -train"
 
 # Run
-${RUNCOMMAND} -testset "${TRAINOUT}/test/" -pretrained "${OUTDIR}/net.ser" -runeval
+RUN="${RUNCOMMAND} -testset "${TRAINOUT}/test/" -pretrained "${OUTDIR}/net.ser" -runeval"
+
+${TRAIN} -max-delta 0.03 -perc-change 0.05 -max-patience 30 -max-iter 15000
+
+${RUN}
