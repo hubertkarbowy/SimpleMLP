@@ -44,4 +44,10 @@ public class Args {
 
   @Parameter(names = "-max-iter", description = "Set maximum number of iterations")
   int maxIter = 5000;
+
+  @Parameter(names = "-layers", description = "Number of hidden layers")
+  int layers = 1;
+
+  @Parameter(names = "-neurons", description = "Number of neurons in every hidden layer")
+  int neurons = 10;
 }

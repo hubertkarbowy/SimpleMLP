@@ -27,8 +27,17 @@ public class Main {
             , double maxPercent
             , int maxPatience
             , int maxIter
+            , int layers
+            , int neurons
     ) throws IOException {
-        net = new MLPNetwork(layerDefs, maxDelta, maxPercent, maxPatience, maxIter);
+        int layersDef[] = new int[layers + 2];
+        for (int i = 0; i < layersDef.length; ++i) {
+            layersDef[i] = neurons;
+        }
+        layersDef[0] = imgWidthAndHeight*imgWidthAndHeight;
+        layersDef[layersDef.length - 1] = 1;
+
+        net = new MLPNetwork(layersDef, maxDelta, maxPercent, maxPatience, maxIter);
         net.setInputs(trainDir);
         System.out.println(net.toString());
         net.train();
@@ -104,7 +113,9 @@ public class Main {
                     , cmdargs.maxDelta
                     , cmdargs.percChange
                     , cmdargs.maxPatience
-                    , cmdargs.maxIter);
+                    , cmdargs.maxIter
+                    , cmdargs.layers
+                    , cmdargs.neurons);
         }
         else if (cmdargs.runeval) {
             runPredictions(cmdargs.pretrained, cmdargs.testset);
