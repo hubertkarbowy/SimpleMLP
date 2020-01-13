@@ -50,4 +50,7 @@ public class Args {
 
   @Parameter(names = "-neurons", description = "Number of neurons in every hidden layer")
   int neurons = 10;
+
+  @Parameter(names = "-trains", description = "Number of neurons in every hidden layer")
+  int trains = 1000;
 }

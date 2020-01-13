@@ -104,7 +104,7 @@ public class Main {
         Args cmdargs = new Args();
         JCommander.newBuilder().addObject(cmdargs).build().parse(args);
         if (cmdargs.split) {
-            train_test_split(Paths.get(cmdargs.trainset), cmdargs.truelabel, Paths.get(cmdargs.outdir), 1000, 20, 50);
+            train_test_split(Paths.get(cmdargs.trainset), cmdargs.truelabel, Paths.get(cmdargs.outdir), cmdargs.trains, 20, 50);
         }
         else if (cmdargs.train) {
             trainAndSave
