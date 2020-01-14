@@ -15,7 +15,7 @@ DELTA_FILE="${OUTDIR}/delta.csv"
 PERC_FILE="${OUTDIR}/perc.csv"
 PATIENCE_FILE="${OUTDIR}/patience.csv"
 LAYERS_FILE="${OUTDIR}/layers.csv"
-N_EXAMPLES_FILE="${OUTDIR}/examples.csv"
+TRAINS_FILE="${OUTDIR}/examples.csv"
 
 RUNCOMMAND="${JDK}/java -Dfile.encoding=UTF-8 -classpath ${CLASSPATH} pl.hubertkarbowy.Main"
 
@@ -46,10 +46,10 @@ run_tests () {
   gnuplot <<EOL
   set terminal png
   set output "${PLOTDIR}/${PARAM}.png"
-  set xlabel "Iterations"
+  set xlabel "${PARAM}"
   set ylabel "F1"
   set logscale x 10
-  plot "${FILE}" title with line "Net F1"
+  plot "${FILE}" with line title "Net F1"
 EOL
 }
 
@@ -70,5 +70,5 @@ for i in ${TRAINS}
 do
   rm -rf ${TRAINOUT}
   ${RUNCOMMAND} -trainset ${TRAINSET} -truelabel "3" -outdir ${TRAINOUT} -split -trains $i
-  run_tests "$i" "-trains" "${LAYERS_FILE}"
+  run_tests "$i" "-trains" "${TRAINS_FILE}"
 done
