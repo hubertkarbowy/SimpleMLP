@@ -20,7 +20,24 @@ public class Main {
     final static int[] layerDefs = new int[]{imgWidthAndHeight*imgWidthAndHeight, 1};
     static MLPNetwork net = new MLPNetwork(layerDefs);
 
-    public static void trainAndSave(String trainDir, String outFile) throws IOException {
+    public static void trainAndSave
+            ( String trainDir
+            , String outFile
+            , double maxDelta
+            , double maxPercent
+            , int maxPatience
+            , int maxIter
+            , int layers
+            , int neurons
+    ) throws IOException {
+        int layersDef[] = new int[layers + 2];
+        for (int i = 0; i < layersDef.length; ++i) {
+            layersDef[i] = neurons;
+        }
+        layersDef[0] = imgWidthAndHeight*imgWidthAndHeight;
+        layersDef[layersDef.length - 1] = 1;
+
+        net = new MLPNetwork(layersDef, maxDelta, maxPercent, maxPatience, maxIter);
         net.setInputs(trainDir);
         System.out.println(net.toString());
         net.train();
@@ -87,10 +104,18 @@ public class Main {
         Args cmdargs = new Args();
         JCommander.newBuilder().addObject(cmdargs).build().parse(args);
         if (cmdargs.split) {
-            train_test_split(Paths.get(cmdargs.trainset), cmdargs.truelabel, Paths.get(cmdargs.outdir), 1000, 20, 50);
+            train_test_split(Paths.get(cmdargs.trainset), cmdargs.truelabel, Paths.get(cmdargs.outdir), cmdargs.trains, 20, 50);
         }
         else if (cmdargs.train) {
-            trainAndSave(cmdargs.trainset, cmdargs.outdir);
+            trainAndSave
+                    ( cmdargs.trainset
+                    , cmdargs.outdir
+                    , cmdargs.maxDelta
+                    , cmdargs.percChange
+                    , cmdargs.maxPatience
+                    , cmdargs.maxIter
+                    , cmdargs.layers
+                    , cmdargs.neurons);
         }
         else if (cmdargs.runeval) {
             runPredictions(cmdargs.pretrained, cmdargs.testset);

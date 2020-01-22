@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="682aba9f-713a-42c9-be4a-5bc6de5ba689" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_beust_jcommander_1_78.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/Args.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimpleMLP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleMLP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/hubertkarbowy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/hubertkarbowy/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/hubertkarbowy/Utils.java" afterDir="false" />
-    </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="682aba9f-713a-42c9-be4a-5bc6de5ba689" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +39,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="393" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="329" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="580" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -56,19 +48,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.Main_split">
+  <component name="RunManager" selected="Application.Main_eval">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -195,6 +175,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -228,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577388309837</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add network parameters configuration throw constructor.&#10;&#10;Add network parameters to GUI.">
+      <created>1578769913940</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1578769913940</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,7 +248,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add simple GUI with tabs&#10;Implement network initialization in GUI&#10;Implement network training in GUI&#10;Implement trained network read and write to file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add simple GUI with tabs&#10;Implement network initialization in GUI&#10;Implement network training in GUI&#10;Implement trained network read and write to file" />
+    <MESSAGE value="Add network parameters configuration throw constructor.&#10;&#10;Add network parameters to GUI." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add network parameters configuration throw constructor.&#10;&#10;Add network parameters to GUI." />
   </component>
   <component name="WindowStateProjectService">
     <state x="906" y="259" key="#Project_Structure" timestamp="1577359970213">
@@ -268,6 +268,10 @@
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
     <state x="1250" y="584" key="#com.intellij.ide.util.TreeFileChooserDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1577382238348" />
+    <state x="1532" y="932" width="993" height="708" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1578764448920">
+      <screen x="0" y="80" width="3840" height="2080" />
+    </state>
+    <state x="1532" y="932" width="993" height="708" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1578764448920" />
     <state x="1592" y="599" width="1390" height="1042" key="#com.intellij.uiDesigner.palette.ComponentItemDialog" timestamp="1577383084768">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
@@ -276,49 +280,49 @@
     </state>
     <state x="1621" y="843" width="1207" height="554" key="#com.intellij.uiDesigner.palette.ComponentItemDialog.OneOff/0.80.3840.2080@0.80.3840.2080" timestamp="1577382863862" />
     <state x="1592" y="599" width="1390" height="1042" key="#com.intellij.uiDesigner.palette.ComponentItemDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1577383084768" />
-    <state x="0" y="80" width="3840" height="2080" key="CommitChangelistDialog2" timestamp="1577388309178">
+    <state x="0" y="80" width="3840" height="2080" key="CommitChangelistDialog2" timestamp="1578769913680">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state x="0" y="80" width="3840" height="2080" key="CommitChangelistDialog2/0.80.3840.2080@0.80.3840.2080" timestamp="1577388309178" />
-    <state width="3726" height="517" key="GridCell.Tab.0.bottom" timestamp="1577446257225">
+    <state x="0" y="80" width="3840" height="2080" key="CommitChangelistDialog2/0.80.3840.2080@0.80.3840.2080" timestamp="1578769913680" />
+    <state width="3726" height="504" key="GridCell.Tab.0.bottom" timestamp="1578955700597">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state width="3726" height="517" key="GridCell.Tab.0.bottom/0.80.3840.2080@0.80.3840.2080" timestamp="1577446257225" />
-    <state width="3726" height="517" key="GridCell.Tab.0.center" timestamp="1577446257224">
+    <state width="3726" height="504" key="GridCell.Tab.0.bottom/0.80.3840.2080@0.80.3840.2080" timestamp="1578955700597" />
+    <state width="3726" height="504" key="GridCell.Tab.0.center" timestamp="1578955700596">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state width="3726" height="517" key="GridCell.Tab.0.center/0.80.3840.2080@0.80.3840.2080" timestamp="1577446257224" />
-    <state width="3726" height="517" key="GridCell.Tab.0.left" timestamp="1577446257223">
+    <state width="3726" height="504" key="GridCell.Tab.0.center/0.80.3840.2080@0.80.3840.2080" timestamp="1578955700596" />
+    <state width="3726" height="504" key="GridCell.Tab.0.left" timestamp="1578955700596">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state width="3726" height="517" key="GridCell.Tab.0.left/0.80.3840.2080@0.80.3840.2080" timestamp="1577446257223" />
-    <state width="3726" height="517" key="GridCell.Tab.0.right" timestamp="1577446257225">
+    <state width="3726" height="504" key="GridCell.Tab.0.left/0.80.3840.2080@0.80.3840.2080" timestamp="1578955700596" />
+    <state width="3726" height="504" key="GridCell.Tab.0.right" timestamp="1578955700596">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state width="3726" height="517" key="GridCell.Tab.0.right/0.80.3840.2080@0.80.3840.2080" timestamp="1577446257225" />
-    <state width="3726" height="657" key="GridCell.Tab.1.bottom" timestamp="1577388417686">
+    <state width="3726" height="504" key="GridCell.Tab.0.right/0.80.3840.2080@0.80.3840.2080" timestamp="1578955700596" />
+    <state width="3726" height="504" key="GridCell.Tab.1.bottom" timestamp="1578955700597">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state width="3726" height="657" key="GridCell.Tab.1.bottom/0.80.3840.2080@0.80.3840.2080" timestamp="1577388417686" />
-    <state width="3726" height="657" key="GridCell.Tab.1.center" timestamp="1577388417686">
+    <state width="3726" height="504" key="GridCell.Tab.1.bottom/0.80.3840.2080@0.80.3840.2080" timestamp="1578955700597" />
+    <state width="3726" height="504" key="GridCell.Tab.1.center" timestamp="1578955700597">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state width="3726" height="657" key="GridCell.Tab.1.center/0.80.3840.2080@0.80.3840.2080" timestamp="1577388417686" />
-    <state width="3726" height="657" key="GridCell.Tab.1.left" timestamp="1577388417686">
+    <state width="3726" height="504" key="GridCell.Tab.1.center/0.80.3840.2080@0.80.3840.2080" timestamp="1578955700597" />
+    <state width="3726" height="504" key="GridCell.Tab.1.left" timestamp="1578955700597">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state width="3726" height="657" key="GridCell.Tab.1.left/0.80.3840.2080@0.80.3840.2080" timestamp="1577388417686" />
-    <state width="3726" height="657" key="GridCell.Tab.1.right" timestamp="1577388417686">
+    <state width="3726" height="504" key="GridCell.Tab.1.left/0.80.3840.2080@0.80.3840.2080" timestamp="1578955700597" />
+    <state width="3726" height="504" key="GridCell.Tab.1.right" timestamp="1578955700597">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state width="3726" height="657" key="GridCell.Tab.1.right/0.80.3840.2080@0.80.3840.2080" timestamp="1577388417686" />
-    <state x="1112" y="716" key="com.intellij.ide.util.TipDialog" timestamp="1577441950821">
+    <state width="3726" height="504" key="GridCell.Tab.1.right/0.80.3840.2080@0.80.3840.2080" timestamp="1578955700597" />
+    <state x="1112" y="716" key="com.intellij.ide.util.TipDialog" timestamp="1578932313289">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state x="1112" y="716" key="com.intellij.ide.util.TipDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1577441950821" />
-    <state x="1290" y="828" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog" timestamp="1577362998102">
+    <state x="1112" y="716" key="com.intellij.ide.util.TipDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1578932313289" />
+    <state x="1290" y="828" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog" timestamp="1578765943033">
       <screen x="0" y="80" width="3840" height="2080" />
     </state>
-    <state x="1290" y="828" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1577362998102" />
+    <state x="1290" y="828" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog/0.80.3840.2080@0.80.3840.2080" timestamp="1578765943033" />
   </component>
 </project>
